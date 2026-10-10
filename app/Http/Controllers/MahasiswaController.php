@@ -15,9 +15,9 @@ class MahasiswaController extends Controller
             'email' => 'naufalhafizh@icloud.com',
             'kampus' => 'Universitas Pamulang',
             'status' => 'Aktif',
-            'foto' => asset('images.png') // Memanggil gambar kelapa dari folder public
+            'foto' => asset('images.png')
         ];
 
-        return view('mahasiswa', compact('mahasiswa'));
+        return view('page.profile', compact('mahasiswa'));
     }
 }

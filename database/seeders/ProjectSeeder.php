@@ -2,92 +2,34 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\Project;
+use Illuminate\Database\Seeder;
 
 class ProjectSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         $projects = [
-            [
-                'title' => 'E-Commerce SEO Optimization',
-                'description' => 'Aplikasi optimalisasi struktur heading dan indexing halaman web toko online',
-                'teknologi' => 'PHP & Google Search Console',
-                'image' => 'project2.jpg',
-                'status' => 'In Progres'
-            ],
-            [
-                'title' => 'Inventory Management System',
-                'description' => 'Sistem pelacakan stok barang masuk dan keluar secara *real-time* berbasis web',
-                'teknologi' => 'Laravel & MySQL',
-                'image' => 'project3.jpg',
-                'status' => 'Completed'
-            ],
-            [
-                'title' => 'Point of Sales (POS) Kasir',
-                'description' => 'Aplikasi kasir digital untuk pencatatan transaksi penjualan dan cetak struk',
-                'teknologi' => 'React.js & Node.js',
-                'image' => 'project4.jpg',
-                'status' => 'In Progres'
-            ],
-            [
-                'title' => 'Company Profile & CMS',
-                'description' => 'Website profil perusahaan dengan sistem manajemen konten dinamis untuk admin',
-                'teknologi' => 'PHP Native & Bootstrap',
-                'image' => 'project5.jpg',
-                'status' => 'Completed'
-            ],
-            [
-                'title' => 'Smart Attendance System',
-                'description' => 'Sistem absensi pegawai berbasis geolokasi dan pemindaian QR Code',
-                'teknologi' => 'Flutter & Firebase',
-                'image' => 'project6.jpg',
-                'status' => 'In Progres'
-            ],
-            [
-                'title' => 'Hospital Appointment Booking',
-                'description' => 'Platform pendaftaran antrean pasien rumah sakit secara online dan terpadu',
-                'teknologi' => 'Vue.js & Express.js',
-                'image' => 'project7.jpg',
-                'status' => 'Completed'
-            ],
-            [
-                'title' => 'Learning Management System',
-                'description' => 'Portal e-learning untuk manajemen kursus, kuis online, dan penilaian siswa',
-                'teknologi' => 'Python & Django',
-                'image' => 'project8.jpg',
-                'status' => 'In Progres'
-            ],
-            [
-                'title' => 'Real-Time Chat Application',
-                'description' => 'Aplikasi perpesanan instan berbasis web menggunakan protokol WebSocket',
-                'teknologi' => 'JavaScript & Socket.io',
-                'image' => 'project9.jpg',
-                'status' => 'Completed'
-            ],
-            [
-                'title' => 'Library Digital Catalog',
-                'description' => 'Sistem katalog perpustakaan digital untuk pencarian dan peminjaman buku',
-                'teknologi' => 'Java & Spring Boot',
-                'image' => 'project10.jpg',
-                'status' => 'In Progres'
-            ],
-            [
-                'title' => 'Financial Expense Tracker',
-                'description' => 'Aplikasi pencatatan keuangan pribadi dan laporan pengeluaran bulanan',
-                'teknologi' => 'React Native & SQLite',
-                'image' => 'project11.jpg',
-                'status' => 'Completed'
-            ],
+            ['Sistem Informasi Akademik', 'In progress', 'Aplikasi berbasis web untuk pengelolaan data mahasiswa, dosen, dan nilai.', 'Laravel & Bootstrap'],
+            ['E-Commerce SEO Optimization', 'In progress', 'Aplikasi optimalisasi struktur heading dan indexing untuk toko online.', 'PHP & Google Search Console'],
+            ['Redesign Cover dan Branding', 'Selesai', 'Perancangan elemen grafis personal branding dan cover portofolio.', 'Figma & Canva'],
+            ['Web Profile Mahasiswa', 'Selesai', 'Website profile mahasiswa prodi SI UNPAM.', 'Laravel & Bootstrap'],
+            ['Aplikasi Kasir Sederhana', 'Selesai', 'Aplikasi kasir untuk mencatat transaksi penjualan harian.', 'PHP & MySQL'],
+            ['Landing Page Toko Roti', 'Selesai', 'Halaman promosi responsif untuk usaha toko roti lokal.', 'HTML, CSS & Bootstrap'],
+            ['Sistem Perpustakaan Digital', 'In progress', 'Pengelolaan data buku, anggota, dan peminjaman secara online.', 'Laravel & MySQL'],
+            ['Desain UI Aplikasi Mobile', 'Selesai', 'Rancangan antarmuka aplikasi mobile untuk pemesanan makanan.', 'Figma'],
+            ['Dashboard Data Penjualan', 'In progress', 'Dashboard visualisasi data penjualan bulanan dengan grafik.', 'Laravel & Chart.js'],
+            ['Website Company Profile', 'Selesai', 'Website profil perusahaan dengan halaman layanan dan kontak.', 'Laravel & Bootstrap'],
         ];
 
-        foreach ($projects as $project) {
-            Project::create($project);
+        foreach ($projects as $i => $p) {
+            Project::create([
+                'title'       => $p[0],
+                'image'       => 'project' . ($i + 1) . '.jpg',
+                'status'      => $p[1],
+                'description' => $p[2],
+                'teknologi'   => $p[3],
+            ]);
         }
     }
 }

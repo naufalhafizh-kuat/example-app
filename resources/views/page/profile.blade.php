@@ -8,7 +8,7 @@
         <div class="card shadow-sm border-0">
             <div class="card-header bg-white text-center py-4">
                 <div class="d-flex justify-content-center mb-3">
-                    <img src="{{ asset('bootstrap-5.3.8-dist/image/imeg.jpg') }}"
+                    <img src="{{ asset('images/kelapa.jpg') }}"
                         alt="Foto mahasiswa"
                         class="rounded-circle img-thumbnail border border-3 border-primary"
                         style="width: 120px; height: 120px; object-fit: cover;">
